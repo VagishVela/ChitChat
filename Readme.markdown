@@ -1,8 +1,9 @@
 #ChitChat (formerly WhatsMac)
+This is a modified Version of ChitChat from [stonesam92](https://github.com/stonesam92/ChitChat) and was created, because he is no longer active.
 
-A Mac app wrapper around WhatsApp's web client, [WhatsApp Web](https://web.whatsapp.com). 
+A Mac app wrapper around WhatsApp's web client, [WhatsApp Web](https://web.whatsapp.com).
 
-The latest version is available [here](https://github.com/stonesam92/WhatsMac/releases/latest). Need help? Ask me on Twitter [here](https://twitter.com/cmdshiftn).
+The latest version is available [here](https://github.com/Neo11/ChitChat/releases/latest).
 
 Requires OSX 10.10 Yosemite and a WhatsApp Web compatible device.
   

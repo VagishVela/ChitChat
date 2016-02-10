@@ -7,35 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C152416374AAE0D854DA21A /* WAMApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C152F56EDCA973A1C468608 /* WAMApplication.swift */; };
+		1C15259F1E16730088D59710 /* WAMWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C152D41F9D97D5FD31F2236 /* WAMWebView.swift */; };
 		223C319C1B07B66500E09138 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C319B1B07B66500E09138 /* AppDelegate.m */; };
 		223C319E1B07B66500E09138 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C319D1B07B66500E09138 /* main.m */; };
 		223C31A31B07B66500E09138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223C31A21B07B66500E09138 /* Images.xcassets */; };
 		223C31BE1B08167D00E09138 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223C31BD1B08167D00E09138 /* MainMenu.xib */; };
 		2262F0D71B0966F000186F1D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2262F0D61B0966F000186F1D /* WebKit.framework */; };
 		2262F0DE1B0A9BD900186F1D /* inject.js in Resources */ = {isa = PBXBuildFile; fileRef = 2262F0DD1B0A9BD900186F1D /* inject.js */; };
-		2262F0E11B0B842F00186F1D /* WAMApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2262F0E01B0B842F00186F1D /* WAMApplication.m */; };
-		2262F0E41B0BF4C200186F1D /* WAMWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2262F0E31B0BF4C200186F1D /* WAMWebView.m */; };
 		226C98E61B0F564100515A14 /* noConnection.html in Resources */ = {isa = PBXBuildFile; fileRef = 226C98E51B0F564100515A14 /* noConnection.html */; };
 		22D3AC7B1B0D574D005FCA4B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D3AC7A1B0D574D005FCA4B /* Sparkle.framework */; };
-		22D3AC7D1B0D57A3005FCA4B /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22D3AC7A1B0D574D005FCA4B /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22D3AC7D1B0D57A3005FCA4B /* Sparkle.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 22D3AC7A1B0D574D005FCA4B /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22D3AC7F1B0D58C3005FCA4B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 22D3AC7E1B0D58C3005FCA4B /* dsa_pub.pem */; };
 		22FD6F861B18DE3A001B593D /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 22FD6F851B18DE3A001B593D /* jquery.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		22D3AC7C1B0D578E005FCA4B /* CopyFiles */ = {
+		22D3AC7C1B0D578E005FCA4B /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				22D3AC7D1B0D57A3005FCA4B /* Sparkle.framework in CopyFiles */,
+				22D3AC7D1B0D57A3005FCA4B /* Sparkle.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C15252B8EDE9D3450C658B4 /* ChitChat-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ChitChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		1C152D41F9D97D5FD31F2236 /* WAMWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAMWebView.swift; sourceTree = "<group>"; };
+		1C152F56EDCA973A1C468608 /* WAMApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAMApplication.swift; sourceTree = "<group>"; };
 		223C31951B07B66500E09138 /* ChitChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChitChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		223C31991B07B66500E09138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		223C319A1B07B66500E09138 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,10 +50,6 @@
 		223C31BF1B0819DB00E09138 /* WKWebView+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+Private.h"; sourceTree = "<group>"; };
 		2262F0D61B0966F000186F1D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2262F0DD1B0A9BD900186F1D /* inject.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = inject.js; sourceTree = "<group>"; };
-		2262F0DF1B0B842F00186F1D /* WAMApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAMApplication.h; sourceTree = "<group>"; };
-		2262F0E01B0B842F00186F1D /* WAMApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMApplication.m; sourceTree = "<group>"; };
-		2262F0E21B0BF4C200186F1D /* WAMWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAMWebView.h; sourceTree = "<group>"; };
-		2262F0E31B0BF4C200186F1D /* WAMWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMWebView.m; sourceTree = "<group>"; };
 		226C98E51B0F564100515A14 /* noConnection.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = noConnection.html; sourceTree = "<group>"; };
 		22D3AC7A1B0D574D005FCA4B /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		22D3AC7E1B0D58C3005FCA4B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -95,14 +95,13 @@
 				226C98E51B0F564100515A14 /* noConnection.html */,
 				223C319A1B07B66500E09138 /* AppDelegate.h */,
 				223C319B1B07B66500E09138 /* AppDelegate.m */,
-				2262F0DF1B0B842F00186F1D /* WAMApplication.h */,
-				2262F0E01B0B842F00186F1D /* WAMApplication.m */,
-				2262F0E21B0BF4C200186F1D /* WAMWebView.h */,
-				2262F0E31B0BF4C200186F1D /* WAMWebView.m */,
 				223C31BF1B0819DB00E09138 /* WKWebView+Private.h */,
 				223C31A21B07B66500E09138 /* Images.xcassets */,
 				223C31BD1B08167D00E09138 /* MainMenu.xib */,
 				223C31981B07B66500E09138 /* Supporting Files */,
+				1C15252B8EDE9D3450C658B4 /* ChitChat-Bridging-Header.h */,
+				1C152F56EDCA973A1C468608 /* WAMApplication.swift */,
+				1C152D41F9D97D5FD31F2236 /* WAMWebView.swift */,
 			);
 			path = WhatsMac;
 			sourceTree = "<group>";
@@ -135,7 +134,7 @@
 				223C31911B07B66500E09138 /* Sources */,
 				223C31921B07B66500E09138 /* Frameworks */,
 				223C31931B07B66500E09138 /* Resources */,
-				22D3AC7C1B0D578E005FCA4B /* CopyFiles */,
+				22D3AC7C1B0D578E005FCA4B /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -152,11 +151,13 @@
 		223C318D1B07B66500E09138 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = "Sam Stone";
+				ORGANIZATIONNAME = "Tom Schmidt";
 				TargetAttributes = {
 					223C31941B07B66500E09138 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 85EU5W2C4T;
 					};
 				};
 			};
@@ -199,10 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2262F0E11B0B842F00186F1D /* WAMApplication.m in Sources */,
-				2262F0E41B0BF4C200186F1D /* WAMWebView.m in Sources */,
 				223C319E1B07B66500E09138 /* main.m in Sources */,
 				223C319C1B07B66500E09138 /* AppDelegate.m in Sources */,
+				1C152416374AAE0D854DA21A /* WAMApplication.swift in Sources */,
+				1C15259F1E16730088D59710 /* WAMWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +293,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +305,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WhatsMac/ChitChat-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -309,6 +314,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -319,6 +326,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WhatsMac/ChitChat-Bridging-Header.h";
 			};
 			name = Release;
 		};

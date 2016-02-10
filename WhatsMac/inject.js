@@ -8,7 +8,9 @@ this.Notification = function (title, options) {
     webkit.messageHandlers.notification.postMessage([title, options.body, options.tag]);
 };
 this.Notification.permission = 'granted';
-this.Notification.requestPermission = function(callback) {callback('granted');};
+this.Notification.requestPermission = function (callback) {
+    callback('granted');
+};
 
 var styleAdditions = document.createElement('style');
 styleAdditions.textContent = 'div.pane-list-user { opacity:0; } \
@@ -41,14 +43,31 @@ div.app.three, div.app.two { top: 0px; width: 100%; height: 100%; } \
 ';
 document.documentElement.appendChild(styleAdditions);
 
-function activateSearchField () {
+function activateSearchField() {
     document.querySelector('input.input-search').focus();
 }
 
-function newConversation () {
+function dispatch(target, eventType, char) {
+    var evt = document.createEvent("TextEvent");
+    evt.initTextEvent(eventType, true, true, window, char, 0, "en-US");
+    target.focus();
+    target.dispatchEvent(evt);
+}
+
+
+function triggerClick() {
+    var event = new MouseEvent('click', {
+        'view': window,
+        'bubbles': true,
+        'cancelable': true
+    });
+    document.querySelector(".icon.btn-icon.icon-send").dispatchEvent(event)
+}
+
+function newConversation() {
     document.querySelector('button.icon-chat').click();
     document.querySelector('input.input-search').focus();
-    
+
     var header = document.querySelector('div.drawer-title');
     header.style.left = '0px';
     header.style.bottom = '12px';
@@ -56,52 +75,52 @@ function newConversation () {
 
 var CHAT_ITEM_HEIGHT;
 
-function offsetOfListItem ($item) {
+function offsetOfListItem($item) {
     return parseInt($item.css('transform')
-                            .split(',')
-                            .slice()
-                            .pop());
+        .split(',')
+        .slice()
+        .pop());
 }
 
-function indexOfListItem ($item) {
+function indexOfListItem($item) {
     return offsetOfListItem($item) / CHAT_ITEM_HEIGHT;
 }
 
-function clickOnItemWithIndex (index, scrollToItem) {
+function clickOnItemWithIndex(index, scrollToItem) {
     var $ = jQuery;
     var $infiniteListItems = $('.infinite-list-viewport .infinite-list-item');
     $.each($infiniteListItems, function () {
         var $this = $(this);
         if (indexOfListItem($this) === index) {
-                var desiredItem = $this.get(0);
-                desiredItem.firstChild.click();
-                if (scrollToItem) {
-					$scrollView = $('.pane-list-body');
-					$desiredItem = $(desiredItem);
-					
-					// Check whether the desired item is not inside the viewport (below)
-					if ($desiredItem.position().top + CHAT_ITEM_HEIGHT > $scrollView.scrollTop() + $scrollView.height()) {
-	                    var scrollPos = $desiredItem.position().top - $scrollView.height() + CHAT_ITEM_HEIGHT;
-	                    $scrollView.stop().animate({scrollTop: scrollPos}, 150);
-					}
-					// Check whether the desired item is not inside the viewport (above)
-					else if ($desiredItem.position().top < $scrollView.scrollTop()) {
-	                    var scrollPos = $desiredItem.position().top;
-	                    $scrollView.stop().animate({scrollTop: scrollPos}, 150);
-					}					
+            var desiredItem = $this.get(0);
+            desiredItem.firstChild.click();
+            if (scrollToItem) {
+                $scrollView = $('.pane-list-body');
+                $desiredItem = $(desiredItem);
+
+                // Check whether the desired item is not inside the viewport (below)
+                if ($desiredItem.position().top + CHAT_ITEM_HEIGHT > $scrollView.scrollTop() + $scrollView.height()) {
+                    var scrollPos = $desiredItem.position().top - $scrollView.height() + CHAT_ITEM_HEIGHT;
+                    $scrollView.stop().animate({scrollTop: scrollPos}, 150);
                 }
-                return false;
+                // Check whether the desired item is not inside the viewport (above)
+                else if ($desiredItem.position().top < $scrollView.scrollTop()) {
+                    var scrollPos = $desiredItem.position().top;
+                    $scrollView.stop().animate({scrollTop: scrollPos}, 150);
+                }
+            }
+            return false;
         }
     });
 }
 
-function openChat (rawTag) {
+function openChat(rawTag) {
     var $ = jQuery;
     var tag = rawTag.replace('.', '=1');
     $('div.chat[data-reactid*="' + tag + '"]').first().click();
 }
 
-function setActiveConversationAtIndex (index) {
+function setActiveConversationAtIndex(index) {
     if (index < 1 || index > 9) {
         return;
     }
@@ -111,14 +130,14 @@ function setActiveConversationAtIndex (index) {
         clickOnItemWithIndex(index - 1, false);
     } else {
         new MutationObserver(function () {
-                                clickOnItemWithIndex(index - 1, false);
-                                this.disconnect();
-                            })
-                            .observe(conversationList, {
-                                attributes: true,
-                                childList: true,
-                                subtree: true
-                            });
+            clickOnItemWithIndex(index - 1, false);
+            this.disconnect();
+        })
+            .observe(conversationList, {
+                attributes: true,
+                childList: true,
+                subtree: true
+            });
     }
     conversationList.scrollTop = 0;
 }
@@ -142,7 +161,7 @@ jQuery(function () {
             }
             var $input = $('.input');
             var isInputFieldEmpty = $input.contents().length === 0 ||
-                                    $input.contents()[0].nodeName === 'BR';
+                $input.contents()[0].nodeName === 'BR';
             if (direction && isInputFieldEmpty) {
                 event.preventDefault();
                 var $selectedItem = null;

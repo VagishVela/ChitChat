@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
 #import "WKWebView+Private.h"
-#import "WAMWebView.h"
+#import "ChitChat-Swift.h"
 #import <AppKit/AppKit.h>
 #import <Foundation/Foundation.h>
 
@@ -43,10 +43,10 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     [contentController addUserScript:userScript];
     [contentController addScriptMessageHandler:self name:@"notification"];
     config.userContentController = contentController;
-    
-    #if DEBUG
+
+#if DEBUG
     [config.preferences setValue:@YES forKey:@"developerExtrasEnabled"];
-    #else
+#else
     WKUserScript *noRightClickJS = [[WKUserScript alloc] initWithSource:
                                     @"document.addEventListener('contextmenu',"
                                     "function(event) {"
@@ -55,7 +55,7 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
                                                           injectionTime:WKUserScriptInjectionTimeAtDocumentStart
                                                        forMainFrameOnly:NO];
     [contentController addUserScript:noRightClickJS];
-    #endif
+#endif
     return config;
 }
 
@@ -75,81 +75,81 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     _window.delegate = self;
     _window.frameAutosaveName = @"main";
     _window.collectionBehavior = NSWindowCollectionBehaviorFullScreenPrimary;
-  
+
     [self updateTitlebarOfWindow:_window fullScreen:NO];
-    
+
     [self doubleClickPreferenceDidChange:nil];
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(doubleClickPreferenceDidChange:) name:_AppleActionOnDoubleClickNotification object:nil];
-  
+
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     [defaults registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:WAMShouldHideStatusItem]];
     if (![defaults boolForKey:WAMShouldHideStatusItem]) {
-      [self createStatusItem];
+        [self createStatusItem];
     } else {
-      [self.statusItemToggle setTitle:@"Show Status Icon"];
+        [self.statusItemToggle setTitle:@"Show Status Icon"];
     }
 
     _webView = [[WAMWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)
-                                  configuration:[self webViewConfig]];
-    
+                                   configuration:[self webViewConfig]];
+
     _window.contentView = _webView;
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
     [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
-    
+
     //Whatsapp web only works with specific user agents
     _webView._customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12";
-  
+
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://web.whatsapp.com"]];
     [_webView loadRequest:urlRequest];
     [_window makeKeyAndOrderFront:self];
 
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate: self];
-    
+
     [[SUUpdater sharedUpdater] checkForUpdatesInBackground];
 }
 
 - (BOOL)shouldPropagateMouseDraggedEvent:(NSEvent*)theEvent {
     if (![theEvent.window isEqual:_window]) {
-      return YES;
+        return YES;
     }
-    
+
     if (!_isDragging) {
-      _isDragging = YES;
-      _initialDragPosition = theEvent.locationInWindow;
+        _isDragging = YES;
+        _initialDragPosition = theEvent.locationInWindow;
     }
-    
+
     if (_initialDragPosition.y < (_window.frame.size.height - 59)) {
-      return YES;
+        return YES;
     }
-    
+
     NSPoint mouseLocation = [NSEvent mouseLocation];
     NSRect newFrame = NSRectFromCGRect(_window.frame);
     newFrame.origin.x = mouseLocation.x - _initialDragPosition.x;
     newFrame.origin.y = mouseLocation.y - _initialDragPosition.y;
 
     [_window.animator setFrame:newFrame display:YES animate:NO];
-    
+
     return NO;
 }
 
 - (BOOL)shouldPropagateMouseUpEvent:(NSEvent *)theEvent {
     if (_isDragging) {
-      _isDragging = NO;
-      return NO;
-    }
-    
-    if (theEvent.locationInWindow.y >= (_window.frame.size.height - 59)) {
-      if (theEvent.clickCount == 2) {
-        if (_doubleClickShouldMinimize) {
-          [_window miniaturize:self];
-        } else {
-          [_window zoom:self];
-        }
+        _isDragging = NO;
         return NO;
-      }
     }
-    
+
+    if (theEvent.locationInWindow.y >= (_window.frame.size.height - 59)) {
+        if (theEvent.clickCount == 2) {
+            if (_doubleClickShouldMinimize) {
+                [_window miniaturize:self];
+            } else {
+                [_window zoom:self];
+            }
+            return NO;
+        }
+    }
+
     return YES;
 }
 
@@ -168,13 +168,13 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
 - (IBAction)toggleStatusItem:(id)sender {
     if (self.statusItem != nil) {
-      self.statusItem = nil;
-      [self.statusItemToggle setTitle:@"Show Status Icon"];
-      [[NSUserDefaults standardUserDefaults] setBool:YES forKey:WAMShouldHideStatusItem];
+        self.statusItem = nil;
+        [self.statusItemToggle setTitle:@"Show Status Icon"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:WAMShouldHideStatusItem];
     } else {
-      [self createStatusItem];
-      [self.statusItemToggle setTitle:@"Hide Status Icon"];
-      [[NSUserDefaults standardUserDefaults] setBool:NO forKey:WAMShouldHideStatusItem];
+        [self createStatusItem];
+        [self.statusItemToggle setTitle:@"Hide Status Icon"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:WAMShouldHideStatusItem];
     }
 }
 
@@ -214,9 +214,9 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
         self.notificationCount = @"";
     } else {
         NSRegularExpression* regex =
-        [NSRegularExpression regularExpressionWithPattern:@"\\(([0-9]+)\\) WhatsApp Web"
-                                                  options:0
-                                                    error:nil];
+                [NSRegularExpression regularExpressionWithPattern:@"\\(([0-9]+)\\) WhatsApp Web"
+                                                          options:0
+                                                            error:nil];
         NSTextCheckingResult* match = [regex firstMatchInString:title
                                                         options:0
                                                           range:NSMakeRange(0, title.length)];
@@ -243,9 +243,9 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 - (void)setNotificationCount:(NSString *)notificationCount {
     if (![_notificationCount isEqualToString:notificationCount]) {
         [[NSApp dockTile] setBadgeLabel:notificationCount];
-        
+
         NSInteger badgeCount = notificationCount.integerValue;
-        
+
         if (badgeCount) {
             NSImage* image = [NSImage imageNamed:@"statusIconUnread"];
             [self.statusItem.button setImage:image];
@@ -286,7 +286,7 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
 - (void)setActiveConversationAtIndex:(NSString*)index {
     [self.webView evaluateJavaScript:
-     [NSString stringWithFormat:@"setActiveConversationAtIndex(%@)", index]
+                    [NSString stringWithFormat:@"setActiveConversationAtIndex(%@)", index]
                    completionHandler:nil];
 }
 
@@ -295,12 +295,12 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSURL *url = navigationAction.request.URL;
-    
+
     if ([url.host hasSuffix:@"whatsapp.com"] || [url.scheme isEqualToString:@"file"]) {
         decisionHandler(WKNavigationActionPolicyAllow);
     } else if ([url.host hasSuffix:@"whatsapp.net"]) {
         decisionHandler(WKNavigationActionPolicyCancel);
-        
+
         NSAlert *downloadMediaAlert = [[NSAlert alloc] init];
         downloadMediaAlert.messageText = @"Downloading Media";
         downloadMediaAlert.informativeText = @"To download media, please just drag and drop it from this window into Finder.";
@@ -324,11 +324,11 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures
 {
-    
+
     if (!navigationAction.targetFrame.isMainFrame) {
         [[NSWorkspace sharedWorkspace] openURL:navigationAction.request.URL];
     }
-    
+
     return nil;
 }
 
@@ -338,6 +338,8 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     }
     NSArray *messageBody = message.body;
     NSUserNotification *notification = [NSUserNotification new];
+    notification.hasReplyButton = true;
+    notification.responsePlaceholder = @"Reply...";
     notification.title = messageBody[0];
     notification.subtitle = messageBody[1];
     notification.identifier = messageBody[2];
@@ -349,10 +351,31 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 }
 
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
-    [self.webView evaluateJavaScript:
-     [NSString stringWithFormat:@"openChat(\"%@\")", notification.identifier]
-        completionHandler:nil];
-    [center removeDeliveredNotification:notification];
+    if (notification.activationType == NSUserNotificationActivationTypeReplied){
+        NSString* userResponse = notification.response.string;
+        //Sending reply to WAWeb
+        [self.webView evaluateJavaScript:
+                        [NSString stringWithFormat:@"openChat(\"%@\")", notification.identifier]
+                       completionHandler:nil];
+
+        [self.webView evaluateJavaScript:
+                        [NSString stringWithFormat:@"dispatch(document.querySelector('div.input'), 'textInput', '%@')", userResponse]
+                       completionHandler:nil];
+
+        [self.webView evaluateJavaScript:
+                        [NSString stringWithFormat:@"triggerClick();"]
+                       completionHandler:nil];
+
+        [center removeDeliveredNotification:notification];
+
+    } else {
+        [self.webView evaluateJavaScript:
+                        [NSString stringWithFormat:@"openChat(\"%@\")", notification.identifier]
+                       completionHandler:nil];
+        [center removeDeliveredNotification:notification];
+        [_window makeKeyAndOrderFront:self];
+    }
+
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
@@ -366,17 +389,17 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
 # pragma mark Utils
 - (void)updateTitlebarOfWindow:(NSWindow*)window fullScreen:(BOOL)fullScreen {
-        const CGFloat kTitlebarHeight = 59;
+    const CGFloat kTitlebarHeight = 59;
     const CGFloat kFullScreenButtonYOrigin = 3;
     CGRect windowFrame = window.frame;
-  
+
     // Set size of titlebar container
     NSView *titlebarContainerView = [window standardWindowButton:NSWindowCloseButton].superview.superview;
     CGRect titlebarContainerFrame = titlebarContainerView.frame;
     titlebarContainerFrame.origin.y = windowFrame.size.height - kTitlebarHeight;
     titlebarContainerFrame.size.height = kTitlebarHeight;
     titlebarContainerView.frame = titlebarContainerFrame;
-    
+
     // Set position of window buttons
     CGFloat buttonX = 12; // initial LHS margin, matching Safari 8.0 on OS X 10.10.
     NSView *closeButton = [window standardWindowButton:NSWindowCloseButton];
@@ -384,21 +407,21 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     NSView *zoomButton = [window standardWindowButton:NSWindowZoomButton];
     for (NSView *buttonView in @[closeButton, minimizeButton, zoomButton]){
         CGRect buttonFrame = buttonView.frame;
-        
+
         // in fullscreen, the titlebar frame is not governed by kTitlebarHeight but rather appears to be fixed by the system.
         // thus, we set a constant Y origin for the buttons when in fullscreen.
         buttonFrame.origin.y = fullScreen ?
-        kFullScreenButtonYOrigin :
-        round((kTitlebarHeight - buttonFrame.size.height) / 2.0);
-        
+                kFullScreenButtonYOrigin :
+                round((kTitlebarHeight - buttonFrame.size.height) / 2.0);
+
         buttonFrame.origin.x = buttonX;
-        
+
         // spacing for next button, matching Safari 8.0 on OS X 10.10.
         buttonX += buttonFrame.size.width + 6;
-        
+
         [buttonView setFrameOrigin:buttonFrame.origin];
     };
-    
+
 }
 
 - (NSWindow*)createWindow:(NSString*)identifier title:(NSString*)title URL:(NSString*)url {
@@ -409,17 +432,17 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     window.frameAutosaveName = identifier;
     window.title = title;
     window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
-    
+
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [webView setFrame:[window.contentView bounds]];
     webView.translatesAutoresizingMaskIntoConstraints = YES;
     webView.autoresizesSubviews = YES;
     webView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     window.contentView = webView;
-    
+
     NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     [webView loadRequest:req];
-    
+
     window.releasedWhenClosed = YES;
     CFBridgingRetain(window);
     return window;
