@@ -29,6 +29,14 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 - (WKWebViewConfiguration*)webViewConfig {
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     WKUserContentController *contentController = [[WKUserContentController alloc] init];
+    
+    // emoji js into webview
+    NSURL *pathToEmoji = [[NSBundle mainBundle] URLForResource:@"emoji" withExtension:@"js"];
+    NSString *emojiJS = [NSString stringWithContentsOfURL:pathToEmoji encoding:NSUTF8StringEncoding error:nil];
+    WKUserScript *emojiScript = [[WKUserScript alloc] initWithSource:emojiJS
+                                                       injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+                                                    forMainFrameOnly:NO];
+    
     // inject js into webview
     NSURL *pathToJS = [[NSBundle mainBundle] URLForResource:@"inject" withExtension:@"js"];
     NSString *injectedJS = [NSString stringWithContentsOfURL:pathToJS encoding:NSUTF8StringEncoding error:nil];
@@ -40,6 +48,7 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     WKUserScript *jqueryUserScript = [[WKUserScript alloc] initWithSource:jquery
                                                             injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:NO];
     [contentController addUserScript:jqueryUserScript];
+    [contentController addUserScript:emojiScript];
     [contentController addUserScript:userScript];
     [contentController addScriptMessageHandler:self name:@"notification"];
     config.userContentController = contentController;

@@ -1,5 +1,6 @@
 // injected into the webview as a user script
 jQuery.noConflict();
+
 jQuery(document).on('click', 'input[type="file"]', function () {
     alert('To upload media, drag and drop the file into the WhatsApp Web window.');
 });
@@ -7,6 +8,7 @@ jQuery(document).on('click', 'input[type="file"]', function () {
 this.Notification = function (title, options) {
     webkit.messageHandlers.notification.postMessage([title, options.body, options.tag]);
 };
+
 this.Notification.permission = 'granted';
 this.Notification.requestPermission = function (callback) {
     callback('granted');
@@ -42,6 +44,8 @@ div.app.three, div.app.two { top: 0px; width: 100%; height: 100%; } \
 .avatar-image { -webkit-transform: translate3d(0,0,0); } \
 ';
 document.documentElement.appendChild(styleAdditions);
+
+
 
 function activateSearchField() {
     document.querySelector('input.input-search').focus();
@@ -144,6 +148,15 @@ function setActiveConversationAtIndex(index) {
 
 jQuery(function () {
     (function ($) {
+     
+     $(document).keyup(function (event) {
+        if(event.currentTarget.activeElement.contentEditable) {
+            if(event.which < 37 || event.which > 40) {
+                emoji(event.currentTarget.activeElement);
+            }
+        }
+     });
+     
         $(document).keydown(function (event) {
             if (!CHAT_ITEM_HEIGHT) {
                 CHAT_ITEM_HEIGHT = parseInt($($('.infinite-list-viewport .infinite-list-item')[0]).height());
