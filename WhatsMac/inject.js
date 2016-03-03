@@ -139,15 +139,7 @@ function clickOnItemWithIndex(index, scrollToItem) {
 function openChat(rawTag) {
     var $ = jQuery;
     var tag = rawTag.replace('.', '=1');
-    
-    var event = new MouseEvent('click', {
-                               'view': window,
-                               'bubbles': true,
-                               'cancelable': true
-                               });
-
-    //$('div.chat[data-reactid*="' + tag + '"]').first().click();
-    console.log('div.chat[data-reactid*="' + tag + '"]');
+    var event = new MouseEvent('mousedown', { 'view': window, 'bubbles': true, 'cancelable': true });
     document.querySelector('div.chat[data-reactid*="' + tag + '"]').dispatchEvent(event);
 }
 
