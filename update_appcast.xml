@@ -96,5 +96,23 @@
                sparkle:version="1.5.0"
                type="application/octet-stream" />
         </item>
+        <item>
+            <title>Version 2.0.1</title>
+            <description><![CDATA[
+            	    <h3>NOTE: If you are running 10.11 El Capitan, then this update cannot be applied automatically and must be downloaded manually from <a href="https://github.com/stonesam92/ChitChat/releases/tag/v1.5">the release page</a>.</h3>
+                    <h2>Changes</h2>
+                    <ul>
+                        <li>Text2Emoji Support</li>
+                    </ul>
+                    <h2>Issuses</h2>
+                    <ul>
+                        <li>Quick-reply is brocken :(</li>
+                    </ul>
+                ]]></description>
+            <pubDate>Sun, 6 Oct 2015 22:20:00 +0000</pubDate>
+            <enclosure url="https://github.com/neo11/ChitChat/releases/download/v2.0.1/ChitChat.zip"
+               sparkle:version="2.0.1"
+               type="application/octet-stream" />
+        </item>
     </channel>
 </rss>
