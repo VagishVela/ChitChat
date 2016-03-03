@@ -352,6 +352,13 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     notification.title = messageBody[0];
     notification.subtitle = messageBody[1];
     notification.identifier = messageBody[2];
+    
+    // using private API here, not for the App Store
+    NSURL *base64URL = [NSURL URLWithString:messageBody[3]];
+    NSData *imageData = [NSData dataWithContentsOfURL:base64URL];
+    NSImage *avatar = [[NSImage alloc] initWithData: imageData];
+    [notification setValue:avatar forKey:@"_identityImage"];
+    
     [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
 }
 

@@ -29,11 +29,19 @@ function replaceSmiley(emoji, alt, className) {
         if(contents == emoji) {
             clone.deleteContents();
             var img = '<img alt="'+alt+'" draggable="false" class="emoji '+className+'" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">';
-            document.execCommand("insertHTML", false, img);
+            var img = document.createElement("img");
+            img.alt = alt;
+            img.draggable = false;
+            img.className = "emoji " + className;
+            img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+            range.insertNode(img);
+            range.setStartAfter(img);
+            document.execCommand("insertHTML", false, '<span></span>');
             range.collapse(false);
-            range.select();
+            sel = window.getSelection();
             sel.removeAllRanges();
             sel.addRange(range);
+
         }
     }
 }

@@ -6,7 +6,9 @@ jQuery(document).on('click', 'input[type="file"]', function () {
 });
 
 this.Notification = function (title, options) {
-    webkit.messageHandlers.notification.postMessage([title, options.body, options.tag]);
+    convertImgToDataURLviaCanvas(options.icon, function(base64Img){
+        webkit.messageHandlers.notification.postMessage([title, options.body, options.tag, base64Img]);
+    });
 };
 
 this.Notification.permission = 'granted';
@@ -45,6 +47,22 @@ div.app.three, div.app.two { top: 0px; width: 100%; height: 100%; } \
 ';
 document.documentElement.appendChild(styleAdditions);
 
+function convertImgToDataURLviaCanvas(url, callback, outputFormat){
+    var img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = function(){
+        var canvas = document.createElement('CANVAS');
+        var ctx = canvas.getContext('2d');
+        var dataURL;
+        canvas.height = this.height;
+        canvas.width = this.width;
+        ctx.drawImage(this, 0, 0);
+        dataURL = canvas.toDataURL(outputFormat);
+        callback(dataURL);
+        canvas = null;
+    };
+    img.src = url;
+}
 
 
 function activateSearchField() {
@@ -65,7 +83,7 @@ function triggerClick() {
         'bubbles': true,
         'cancelable': true
     });
-    document.querySelector(".icon.btn-icon.icon-send").dispatchEvent(event)
+    document.querySelector(".icon.btn-icon.icon-send").dispatchEvent(event);
 }
 
 function newConversation() {
@@ -121,7 +139,16 @@ function clickOnItemWithIndex(index, scrollToItem) {
 function openChat(rawTag) {
     var $ = jQuery;
     var tag = rawTag.replace('.', '=1');
-    $('div.chat[data-reactid*="' + tag + '"]').first().click();
+    
+    var event = new MouseEvent('click', {
+                               'view': window,
+                               'bubbles': true,
+                               'cancelable': true
+                               });
+
+    //$('div.chat[data-reactid*="' + tag + '"]').first().click();
+    console.log('div.chat[data-reactid*="' + tag + '"]');
+    document.querySelector('div.chat[data-reactid*="' + tag + '"]').dispatchEvent(event);
 }
 
 function setActiveConversationAtIndex(index) {
