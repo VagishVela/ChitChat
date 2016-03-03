@@ -28,7 +28,6 @@ function replaceSmiley(emoji, alt, className) {
         
         if(contents == emoji) {
             clone.deleteContents();
-            var img = '<img alt="'+alt+'" draggable="false" class="emoji '+className+'" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">';
             var img = document.createElement("img");
             img.alt = alt;
             img.draggable = false;
