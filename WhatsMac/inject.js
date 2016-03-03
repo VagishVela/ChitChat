@@ -114,9 +114,11 @@ function clickOnItemWithIndex(index, scrollToItem) {
     $.each($infiniteListItems, function () {
         var $this = $(this);
         if (indexOfListItem($this) === index) {
-            var desiredItem = $this.get(0);
-            desiredItem.firstChild.click();
-            if (scrollToItem) {
+           var desiredItem = $this.get(0);
+           var event = new MouseEvent('mousedown', { 'view': window, 'bubbles': true, 'cancelable': true });
+
+           desiredItem.firstChild.firstChild.dispatchEvent(event);
+           if (scrollToItem) {
                 $scrollView = $('.pane-list-body');
                 $desiredItem = $(desiredItem);
 
@@ -139,7 +141,9 @@ function clickOnItemWithIndex(index, scrollToItem) {
 function openChat(rawTag) {
     var $ = jQuery;
     var tag = rawTag.replace('.', '=1');
+    
     var event = new MouseEvent('mousedown', { 'view': window, 'bubbles': true, 'cancelable': true });
+
     document.querySelector('div.chat[data-reactid*="' + tag + '"]').dispatchEvent(event);
 }
 
