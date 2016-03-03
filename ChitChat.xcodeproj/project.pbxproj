@@ -20,6 +20,7 @@
 		22D3AC7D1B0D57A3005FCA4B /* Sparkle.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 22D3AC7A1B0D574D005FCA4B /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22D3AC7F1B0D58C3005FCA4B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 22D3AC7E1B0D58C3005FCA4B /* dsa_pub.pem */; };
 		22FD6F861B18DE3A001B593D /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 22FD6F851B18DE3A001B593D /* jquery.js */; };
+		96A193451C87213B005E9536 /* emoji.js in Resources */ = {isa = PBXBuildFile; fileRef = 96A193441C87213B005E9536 /* emoji.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,7 @@
 		22D3AC7A1B0D574D005FCA4B /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		22D3AC7E1B0D58C3005FCA4B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		22FD6F851B18DE3A001B593D /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		96A193441C87213B005E9536 /* emoji.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = emoji.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		223C31971B07B66500E09138 /* WhatsMac */ = {
 			isa = PBXGroup;
 			children = (
+				96A193441C87213B005E9536 /* emoji.js */,
 				22D3AC7E1B0D58C3005FCA4B /* dsa_pub.pem */,
 				2262F0DD1B0A9BD900186F1D /* inject.js */,
 				22FD6F851B18DE3A001B593D /* jquery.js */,
@@ -152,12 +155,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Tom Schmidt";
 				TargetAttributes = {
 					223C31941B07B66500E09138 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 85EU5W2C4T;
+						DevelopmentTeam = 4XFEQ6CG38;
 					};
 				};
 			};
@@ -188,6 +191,7 @@
 				22D3AC7F1B0D58C3005FCA4B /* dsa_pub.pem in Resources */,
 				223C31BE1B08167D00E09138 /* MainMenu.xib in Resources */,
 				2262F0DE1B0A9BD900186F1D /* inject.js in Resources */,
+				96A193451C87213B005E9536 /* emoji.js in Resources */,
 				22FD6F861B18DE3A001B593D /* jquery.js in Resources */,
 				226C98E61B0F564100515A14 /* noConnection.html in Resources */,
 			);
@@ -231,6 +235,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -304,6 +309,7 @@
 				INFOPLIST_FILE = WhatsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samstone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WhatsMac/ChitChat-Bridging-Header.h";
@@ -325,6 +331,7 @@
 				INFOPLIST_FILE = WhatsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samstone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WhatsMac/ChitChat-Bridging-Header.h";
