@@ -4,7 +4,9 @@ var emojis = [
 	{ code: ["8)","8-)"], alt: "😎", cName: "emojiordered1373"},
 	{ code: [":p",":-p"], alt: "😛", cName: "emojiordered1386"},
 	{ code: [";)",";-)"], alt: "😉", cName: "emojiordered1368"},
-	{ code: ["%)","%-)"], alt: "😂", cName: "emojiordered1361"}
+	{ code: ["%)","%-)"], alt: "😂", cName: "emojiordered1361"},
+    { code: [":/",":-/"], alt: "😕", cName: "emojiordered1380"},
+    { code: ["<3"], alt: "❤️", cName: "emojiordered0186"}
 ];
 
 function emoji(element) {
