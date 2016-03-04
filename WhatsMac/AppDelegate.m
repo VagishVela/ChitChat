@@ -178,11 +178,11 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 - (IBAction)toggleStatusItem:(id)sender {
     if (self.statusItem != nil) {
         self.statusItem = nil;
-        [self.statusItemToggle setTitle:@"Show Status Icon"];
+        [self.statusItemToggle setTitle: NSLocalizedString(@"status.icon.show", @"Show Status Icon")];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:WAMShouldHideStatusItem];
     } else {
         [self createStatusItem];
-        [self.statusItemToggle setTitle:@"Hide Status Icon"];
+        [self.statusItemToggle setTitle: NSLocalizedString(@"status.icon.hide", @"Hide Status Icon")];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:WAMShouldHideStatusItem];
     }
 }
@@ -348,7 +348,7 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     NSArray *messageBody = message.body;
     NSUserNotification *notification = [NSUserNotification new];
     notification.hasReplyButton = true;
-    notification.responsePlaceholder = @"Reply...";
+    notification.responsePlaceholder = NSLocalizedString(@"quick.reply", @"QuickReply Placeholder");   
     notification.title = messageBody[0];
     notification.subtitle = messageBody[1];
     notification.identifier = messageBody[2];
