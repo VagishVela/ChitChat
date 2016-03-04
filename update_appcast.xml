@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>WhatsMac</title>
@@ -126,9 +127,7 @@
                 </ul>
             ]]></description>
             <pubDate>Sun, 4 Mar 2015 18:41:00 +0000</pubDate>
-            <enclosure url="https://github.com/Neo11/ChitChat/releases/download/v2.1/ChitChat.zip"
-            sparkle:version="2.1"
-            type="application/octet-stream" />
+            <enclosure url="https://github.com/Neo11/ChitChat/releases/download/v2.1/ChitChat.zip" sparkle:version="2.1" type="application/octet-stream" />
         </item>
     </channel>
 </rss>
