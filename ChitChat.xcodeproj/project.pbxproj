@@ -12,6 +12,7 @@
 		223C319C1B07B66500E09138 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C319B1B07B66500E09138 /* AppDelegate.m */; };
 		223C319E1B07B66500E09138 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C319D1B07B66500E09138 /* main.m */; };
 		223C31A31B07B66500E09138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223C31A21B07B66500E09138 /* Images.xcassets */; };
+		223C31BE1B08167D00E09138 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223C31BD1B08167D00E09138 /* MainMenu.xib */; };
 		2262F0D71B0966F000186F1D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2262F0D61B0966F000186F1D /* WebKit.framework */; };
 		2262F0DE1B0A9BD900186F1D /* inject.js in Resources */ = {isa = PBXBuildFile; fileRef = 2262F0DD1B0A9BD900186F1D /* inject.js */; };
 		226C98E61B0F564100515A14 /* noConnection.html in Resources */ = {isa = PBXBuildFile; fileRef = 226C98E51B0F564100515A14 /* noConnection.html */; };
@@ -20,9 +21,6 @@
 		22D3AC7F1B0D58C3005FCA4B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 22D3AC7E1B0D58C3005FCA4B /* dsa_pub.pem */; };
 		22FD6F861B18DE3A001B593D /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 22FD6F851B18DE3A001B593D /* jquery.js */; };
 		96A193451C87213B005E9536 /* emoji.js in Resources */ = {isa = PBXBuildFile; fileRef = 96A193441C87213B005E9536 /* emoji.js */; };
-		96A58EFE1C8979CA00075294 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A58F001C8979CA00075294 /* MainMenu.xib */; };
-		96A58F091C8980A600075294 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 96A58F081C8980A600075294 /* de.lproj */; };
-		96A58F0B1C89811D00075294 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 96A58F0A1C89811D00075294 /* en.lproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +47,7 @@
 		223C319B1B07B66500E09138 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		223C319D1B07B66500E09138 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		223C31A21B07B66500E09138 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		223C31BD1B08167D00E09138 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		223C31BF1B0819DB00E09138 /* WKWebView+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+Private.h"; sourceTree = "<group>"; };
 		2262F0D61B0966F000186F1D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2262F0DD1B0A9BD900186F1D /* inject.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = inject.js; sourceTree = "<group>"; };
@@ -57,11 +56,6 @@
 		22D3AC7E1B0D58C3005FCA4B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		22FD6F851B18DE3A001B593D /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		96A193441C87213B005E9536 /* emoji.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = emoji.js; sourceTree = "<group>"; };
-		96A58EFF1C8979CA00075294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		96A58F011C897A7300075294 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		96A58F031C897BD500075294 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		96A58F081C8980A600075294 /* de.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = de.lproj; sourceTree = "<group>"; };
-		96A58F0A1C89811D00075294 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +100,7 @@
 				223C319B1B07B66500E09138 /* AppDelegate.m */,
 				223C31BF1B0819DB00E09138 /* WKWebView+Private.h */,
 				223C31A21B07B66500E09138 /* Images.xcassets */,
-				96A58F001C8979CA00075294 /* MainMenu.xib */,
+				223C31BD1B08167D00E09138 /* MainMenu.xib */,
 				223C31981B07B66500E09138 /* Supporting Files */,
 				1C15252B8EDE9D3450C658B4 /* ChitChat-Bridging-Header.h */,
 				1C152F56EDCA973A1C468608 /* WAMApplication.swift */,
@@ -118,8 +112,6 @@
 		223C31981B07B66500E09138 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				96A58F0A1C89811D00075294 /* en.lproj */,
-				96A58F081C8980A600075294 /* de.lproj */,
 				223C31991B07B66500E09138 /* Info.plist */,
 				223C319D1B07B66500E09138 /* main.m */,
 			);
@@ -197,12 +189,10 @@
 			files = (
 				223C31A31B07B66500E09138 /* Images.xcassets in Resources */,
 				22D3AC7F1B0D58C3005FCA4B /* dsa_pub.pem in Resources */,
-				96A58EFE1C8979CA00075294 /* MainMenu.xib in Resources */,
+				223C31BE1B08167D00E09138 /* MainMenu.xib in Resources */,
 				2262F0DE1B0A9BD900186F1D /* inject.js in Resources */,
 				96A193451C87213B005E9536 /* emoji.js in Resources */,
 				22FD6F861B18DE3A001B593D /* jquery.js in Resources */,
-				96A58F091C8980A600075294 /* de.lproj in Resources */,
-				96A58F0B1C89811D00075294 /* en.lproj in Resources */,
 				226C98E61B0F564100515A14 /* noConnection.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,19 +212,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		96A58F001C8979CA00075294 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				96A58EFF1C8979CA00075294 /* Base */,
-				96A58F011C897A7300075294 /* de */,
-				96A58F031C897BD500075294 /* en */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		223C31B31B07B66500E09138 /* Debug */ = {
@@ -326,6 +303,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/opt/sparkle,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = WhatsMac/Info.plist;
@@ -347,6 +325,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/opt/sparkle,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = WhatsMac/Info.plist;

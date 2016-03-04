@@ -38,10 +38,7 @@ typedef NS_ENUM(OSStatus, SUError) {
     SUMissingInstallerToolError = 4003,
     SURelaunchError = 4004,
     SUInstallationError = 4005,
-    SUDowngradeError = 4006,
-    
-    // System phase errors
-    SUSystemPowerOffError = 5000
+    SUDowngradeError = 4006
 };
 
 #endif
