@@ -8,3 +8,5 @@ WhatsMac/AppDelegate.m
 WhatsMac/Base.lproj/MainMenu.xib
 
 WhatsMac/inject.js
+
+update_appcast.xml
