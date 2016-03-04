@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>WhatsMac</title>
-        <link>http://samstonedev.com/update_feed.xml</link>
+        <link>https://raw.githubusercontent.com/neo11/ChitChat/master/update_appcast.xml</link>
         <description>A native Mac app wrapper for WhatsApp Web</description>
         <language>en</language>
         <item>
@@ -114,6 +115,19 @@
             <enclosure url="https://github.com/neo11/ChitChat/releases/download/v2.0.1/ChitChat.zip"
                sparkle:version="2.0.1"
                type="application/octet-stream" />
+        </item>
+        <item>
+            <title>Version 2.1</title>
+            <description><![CDATA[
+                <h3>NOTE: If you are running 10.11 El Capitan, then this update cannot be applied automatically and must be downloaded manually from <a href="https://github.com/Neo11/ChitChat/releases/tag/v2.1">the release page</a>.</h3>
+                <h2>Changes</h2>
+                <ul>
+                <li>Fix QuickReply</li>
+                <li>Fix QuickSelect of Chats</li>
+                </ul>
+            ]]></description>
+            <pubDate>Sun, 4 Mar 2015 18:41:00 +0000</pubDate>
+            <enclosure url="https://github.com/Neo11/ChitChat/releases/download/v2.1/ChitChat.zip" sparkle:version="2.1" type="application/octet-stream" />
         </item>
     </channel>
 </rss>
