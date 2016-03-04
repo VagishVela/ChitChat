@@ -9,7 +9,6 @@
 #ifndef SUSTANDARDVERSIONCOMPARATOR_H
 #define SUSTANDARDVERSIONCOMPARATOR_H
 
-#import <Foundation/Foundation.h>
 #import "SUExport.h"
 #import "SUVersionComparisonProtocol.h"
 
