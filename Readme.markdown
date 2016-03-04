@@ -24,7 +24,7 @@ Inspired by, and in small part based on, [Messenger for Mac](http://fbmacmesseng
 
 ##Smileys
 
-A build in Text2Emoji converts the following text into Smileys. Thanks to [Paul](https://github.com/c-o-m-m-a-n-d-e-r)
+Text2Emoji converts the following text into Smileys. Thanks to [Paul](https://github.com/c-o-m-m-a-n-d-e-r)
 
 |ASCII  |Unicode|
 |-------|-------|
