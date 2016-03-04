@@ -1,7 +1,7 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>WhatsMac</title>
-        <link>http://samstonedev.com/update_feed.xml</link>
+        <link>https://raw.githubusercontent.com/neo11/ChitChat/master/update_appcast.xml</link>
         <description>A native Mac app wrapper for WhatsApp Web</description>
         <language>en</language>
         <item>
