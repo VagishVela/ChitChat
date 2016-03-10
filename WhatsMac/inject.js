@@ -170,21 +170,29 @@ function setActiveConversationAtIndex(index) {
 }
 
 jQuery(function () {
-    (function ($) {
-     
-     $(document).keyup(function (event) {
-        if(event.currentTarget.activeElement.contentEditable) {
-            if(event.which < 37 || event.which > 40) {
-                emoji(event.currentTarget.activeElement);
-            }
-        }
-     });
-     
-        $(document).keydown(function (event) {
-            if (!CHAT_ITEM_HEIGHT) {
-                CHAT_ITEM_HEIGHT = parseInt($($('.infinite-list-viewport .infinite-list-item')[0]).height());
-            }
-            var direction = null;
+	(function ($) {
+	 
+		$(document).on('click', function(event) {
+			var target = $(event.target);
+			if (target.parents('div.infinite-list-item').length && !target.parents('.chat-meta').length) {
+				$('footer').find('div.input').focus();
+			}
+		});
+
+		$(document).keyup(function (event) {
+			if(event.currentTarget.activeElement.contentEditable) {
+				if(event.which < 37 || event.which > 40) {
+					emoji(event.currentTarget.activeElement);
+				}
+			}
+		});
+		
+		$(document).keydown(function (event) {
+			if (!CHAT_ITEM_HEIGHT) {
+				CHAT_ITEM_HEIGHT = parseInt($($('.infinite-list-viewport .infinite-list-item')[0]).height());
+			}
+			
+			var direction = null;
             switch (event.which) {
                 case 38:
                     direction = 'UP';
