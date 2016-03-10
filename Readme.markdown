@@ -26,14 +26,16 @@ Inspired by, and in small part based on, [Messenger for Mac](http://fbmacmesseng
 
 Text2Emoji converts the following text into Smileys. Thanks to [Paul](https://github.com/c-o-m-m-a-n-d-e-r)
 
-|ASCII  |Unicode|
-|-------|-------|
-|:), :-)|😊     |
-|:D, :-D|😀     |
-|8), 8-)|😎     |
-|:p, :-p|😛     |
-|;), ;-)|😉     |
-|%), %-)|😂     |
+|ASCII       |Unicode|
+|------------|-------|
+|:), :-)     |😊     |
+|:D, :-D     |😀     |
+|8), 8-)     |😎     |
+|:p, :-p,:-P |😛     |
+|;), ;-)     |😉     |
+|%), %-)     |😂     |
+|:/,:-/      |😕     |
+|<3          |❤️     |
 
 ##Feature Support
 
