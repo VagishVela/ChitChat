@@ -2,7 +2,7 @@ var emojis = [
 	{ code: [":)",":-)"], alt: "😊", cName: "emojiordered1369"},
 	{ code: [":D",":-D"], alt: "😀", cName: "emojiordered1359"},
 	{ code: ["8)","8-)"], alt: "😎", cName: "emojiordered1373"},
-	{ code: [":p",":-p"], alt: "😛", cName: "emojiordered1386"},
+	{ code: [":p",":-p",":-P"], alt: "😛", cName: "emojiordered1386"},
 	{ code: [";)",";-)"], alt: "😉", cName: "emojiordered1368"},
 	{ code: ["%)","%-)"], alt: "😂", cName: "emojiordered1361"},
     { code: [":/",":-/"], alt: "😕", cName: "emojiordered1380"},
