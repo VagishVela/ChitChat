@@ -26,16 +26,16 @@ Inspired by, and in small part based on, [Messenger for Mac](http://fbmacmesseng
 
 Text2Emoji converts the following text into Smileys. Thanks to [Paul](https://github.com/c-o-m-m-a-n-d-e-r)
 
-|ASCII       |Unicode|
-|------------|-------|
-|:), :-)     |😊     |
-|:D, :-D     |😀     |
-|8), 8-)     |😎     |
-|:p, :-p,:-P |😛     |
-|;), ;-)     |😉     |
-|%), %-)     |😂     |
-|:/,:-/      |😕     |
-|<3          |❤️     |
+|ASCII        |Unicode|
+|-------------|-------|
+|:), :-)      |😊     |
+|:D, :-D      |😀     |
+|8), 8-)      |😎     |
+|:p, :-p, :-P |😛     |
+|;), ;-)      |😉     |
+|%), %-)      |😂     |
+|:/, :-/      |😕     |
+|<3           |❤️     |
 
 ##Feature Support
 
@@ -47,7 +47,7 @@ Most features of WhatsApp Web are currently supported, and support for the remai
 | Attached media viewing                  | YES       |
 | Attached media downloading              | YES       |
 | Notification center notifications       | YES       |
-| Media uploading                         | NO\*       |
+| Media uploading                         | NO\*      |
 | Media recording (using camera + mic.)   | NO        |
 
 \*Media uploading **is** supported when dragging the image/video file into the app's window. Uploading using the upload button is currently not supported, since WKWebView provides no easy mechanism for using `<input type="file">` tags.
