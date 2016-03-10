@@ -377,6 +377,10 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
         [self.webView evaluateJavaScript:
                         [NSString stringWithFormat:@"dispatch(document.querySelector('div.input'), 'textInput', '%@')", userResponse]
                        completionHandler:nil];
+        
+        [self.webView evaluateJavaScript:
+                        [NSString stringWithFormat:@"updateEmoji();"]
+                       completionHandler:nil];
 
         [self.webView evaluateJavaScript:
                         [NSString stringWithFormat:@"triggerClick();"]
