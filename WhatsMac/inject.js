@@ -86,6 +86,10 @@ function triggerClick() {
     document.querySelector(".icon.btn-icon.icon-send").dispatchEvent(event);
 }
 
+function updateEmoji() {
+	emoji(document.querySelector('div.input'));
+}
+
 function newConversation() {
     document.querySelector('button.icon-chat').click();
     document.querySelector('input.input-search').focus();
@@ -182,7 +186,7 @@ jQuery(function () {
 		$(document).keyup(function (event) {
 			if(event.currentTarget.activeElement.contentEditable) {
 				if(event.which < 37 || event.which > 40) {
-					emoji(event.currentTarget.activeElement);
+					updateEmoji();
 				}
 			}
 		});
