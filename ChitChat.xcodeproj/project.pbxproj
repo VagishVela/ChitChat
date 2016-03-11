@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C152416374AAE0D854DA21A /* WAMApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C152F56EDCA973A1C468608 /* WAMApplication.swift */; };
 		1C15259F1E16730088D59710 /* WAMWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C152D41F9D97D5FD31F2236 /* WAMWebView.swift */; };
+		1C15270EBBF4C0FE6E9C3C53 /* WKScriptMessageHandlerToNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15279010CB8562CAD66091 /* WKScriptMessageHandlerToNotification.swift */; };
 		223C319C1B07B66500E09138 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C319B1B07B66500E09138 /* AppDelegate.m */; };
 		223C319E1B07B66500E09138 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C319D1B07B66500E09138 /* main.m */; };
 		223C31A31B07B66500E09138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223C31A21B07B66500E09138 /* Images.xcassets */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		1C15252B8EDE9D3450C658B4 /* ChitChat-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ChitChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		1C15279010CB8562CAD66091 /* WKScriptMessageHandlerToNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKScriptMessageHandlerToNotification.swift; sourceTree = "<group>"; };
 		1C152D41F9D97D5FD31F2236 /* WAMWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAMWebView.swift; sourceTree = "<group>"; };
 		1C152F56EDCA973A1C468608 /* WAMApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAMApplication.swift; sourceTree = "<group>"; };
 		223C31951B07B66500E09138 /* ChitChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChitChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				1C15252B8EDE9D3450C658B4 /* ChitChat-Bridging-Header.h */,
 				1C152F56EDCA973A1C468608 /* WAMApplication.swift */,
 				1C152D41F9D97D5FD31F2236 /* WAMWebView.swift */,
+				1C15279010CB8562CAD66091 /* WKScriptMessageHandlerToNotification.swift */,
 			);
 			path = WhatsMac;
 			sourceTree = "<group>";
@@ -160,7 +163,7 @@
 				TargetAttributes = {
 					223C31941B07B66500E09138 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 4XFEQ6CG38;
+						DevelopmentTeam = 85EU5W2C4T;
 					};
 				};
 			};
@@ -208,6 +211,7 @@
 				223C319C1B07B66500E09138 /* AppDelegate.m in Sources */,
 				1C152416374AAE0D854DA21A /* WAMApplication.swift in Sources */,
 				1C15259F1E16730088D59710 /* WAMWebView.swift in Sources */,
+				1C15270EBBF4C0FE6E9C3C53 /* WKScriptMessageHandlerToNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
