@@ -129,5 +129,21 @@
             <pubDate>Sun, 4 Mar 2016 18:41:00 +0000</pubDate>
             <enclosure url="https://github.com/Neo11/ChitChat/releases/download/v2.1/ChitChat.zip" sparkle:version="2.1" type="application/octet-stream" />
         </item>
+        <item>
+            <title>Version 2.2</title>
+            <description><![CDATA[
+                <h3>NOTE: If you are running 10.11 El Capitan, then this update cannot be applied automatically and must be downloaded manually from <a href="https://github.com/Neo11/ChitChat/releases/tag/v2.1">the release page</a>.</h3>
+                <h2>Changes</h2>
+                <ul>
+                <li>Fixes the Back Arrow Problem when you go into your Profile</li>
+                <li>This Fix translate the Emojis from Quickreply Response (only visible in
+                the Chat itself, not in the Responseinput)</li>
+                <li>Focus the Messagefield when Chat is selected</li>
+                <li>Multiple notifications from one sender will be shown</li>
+                </ul>
+            ]]></description>
+            <pubDate>Sun, 11 Mar 2016 18:41:00 +0000</pubDate>
+            <enclosure url="https://github.com/Neo11/ChitChat/releases/download/v2.2/ChitChat.zip" sparkle:version="2.2" type="application/octet-stream" />
+        </item>
     </channel>
 </rss>
