@@ -44,6 +44,8 @@ div.app.three, div.app.two { top: 0px; width: 100%; height: 100%; } \
 }\
 .image-thumb-lores { -webkit-transform: translate3d(0,0,0); } \
 .avatar-image { -webkit-transform: translate3d(0,0,0); } \
+.drawer-header-small { background-color: #00bfa5; color: #fff; height: 108px; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end; padding: 0 20px 12px; -webkit-box-align: inherit; -webkit-align-items: inherit; -ms-flex-align: inherit; align-items: inherit; } \
+.drawer-header-small .drawer-title { -webkit-box-flex: 0; -webkit-flex: none; -ms-flex: none; flex: none; }\
 ';
 document.documentElement.appendChild(styleAdditions);
 
@@ -175,7 +177,6 @@ function setActiveConversationAtIndex(index) {
 
 jQuery(function () {
 	(function ($) {
-	 
 		$(document).on('click', function(event) {
 			var target = $(event.target);
 			if (target.parents('div.infinite-list-item').length && !target.parents('.chat-meta').length) {
