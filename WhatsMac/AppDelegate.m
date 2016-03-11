@@ -11,7 +11,7 @@ NSString *const _AppleActionOnDoubleClickKey = @"AppleActionOnDoubleClick";
 NSString *const _AppleActionOnDoubleClickNotification = @"AppleNoRedisplayAppearancePreferenceChanged";
 NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
-@interface AppDelegate () <NSWindowDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, NSUserNotificationCenterDelegate>
+@interface AppDelegate () <NSWindowDelegate, WKNavigationDelegate, WKUIDelegate, NSUserNotificationCenterDelegate>
 @property (strong, nonatomic) NSWindow *window;
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) NSStatusItem *statusItem;
@@ -50,7 +50,8 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     [contentController addUserScript:jqueryUserScript];
     [contentController addUserScript:emojiScript];
     [contentController addUserScript:userScript];
-    [contentController addScriptMessageHandler:self name:@"notification"];
+    
+    [contentController addScriptMessageHandler:[[WKScriptMessageHandlerToNotification alloc] initWithWindow:_window] name:@"notification"];
     config.userContentController = contentController;
 
 #if DEBUG
@@ -341,27 +342,6 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     return nil;
 }
 
-- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
-    if ([[self window] isMainWindow]) {
-        return;
-    }
-    NSArray *messageBody = message.body;
-    NSUserNotification *notification = [NSUserNotification new];
-    notification.hasReplyButton = true;
-    notification.responsePlaceholder = @"Reply...";
-    notification.title = messageBody[0];
-    notification.subtitle = messageBody[1];
-    notification.identifier = messageBody[2];
-    
-    // using private API here, not for the App Store
-    NSURL *base64URL = [NSURL URLWithString:messageBody[3]];
-    NSData *imageData = [NSData dataWithContentsOfURL:base64URL];
-    NSImage *avatar = [[NSImage alloc] initWithData: imageData];
-    [notification setValue:avatar forKey:@"_identityImage"];
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
-}
-
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
     return YES;
 }
@@ -371,7 +351,7 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
         NSString* userResponse = notification.response.string;
         //Sending reply to WAWeb
         [self.webView evaluateJavaScript:
-                        [NSString stringWithFormat:@"openChat(\"%@\")", notification.identifier]
+         [NSString stringWithFormat:@"openChat(\"%@\")", [notification.identifier componentsSeparatedByString:@":"][0]]
                        completionHandler:nil];
 
         [self.webView evaluateJavaScript:
@@ -390,7 +370,7 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
     } else {
         [self.webView evaluateJavaScript:
-                        [NSString stringWithFormat:@"openChat(\"%@\")", notification.identifier]
+                        [NSString stringWithFormat:@"openChat(\"%@\")", [notification.identifier componentsSeparatedByString:@":"][0]]
                        completionHandler:nil];
         [center removeDeliveredNotification:notification];
         [_window makeKeyAndOrderFront:self];
