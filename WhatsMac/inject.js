@@ -179,9 +179,10 @@ jQuery(function () {
 	(function ($) {
 		$(document).on('click', function(event) {
 			var target = $(event.target);
-			if (target.parents('div.infinite-list-item').length && !target.parents('.chat-meta').length) {
-				$('footer').find('div.input').focus();
-			}
+            if (target.parents('div.infinite-list-item').length && !target.parents('.chat-meta').length &&
+                !target.parents('div.infinite-list-viewport').length) {
+                $('footer').find('div.input').focus();
+            }
 		});
 
 		$(document).keyup(function (event) {
