@@ -9,7 +9,7 @@ Requires OSX 10.10 Yosemite and a WhatsApp Web compatible device.
 
 ![WhatsMac Screenshot](http://i.imgur.com/riXrTvx.jpg "WhatsMac Screenshot")
 
-> Disclaimer: This is NOT an official WhatsApp Product, it is only a hobby project created by the contributers
+> Disclaimer: This is NOT an official WhatsApp Product, it is only a hobby project created by the contributors
 
 Allows you to receive notification center notifications for new messages, and adds some useful keyboard shortcuts:
 
