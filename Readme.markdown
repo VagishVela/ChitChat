@@ -1,5 +1,5 @@
 #ChitChat (formerly WhatsMac)
-This is a modified Version of ChitChat from [stonesam92](https://github.com/stonesam92/ChitChat) and was created, because he is no longer active.
+> This is a modified Version of ChitChat from [stonesam92](https://github.com/stonesam92/ChitChat) and was created, because he is no longer active.
 
 A Mac app wrapper around WhatsApp's web client, [WhatsApp Web](https://web.whatsapp.com).
 
@@ -9,7 +9,7 @@ Requires OSX 10.10 Yosemite and a WhatsApp Web compatible device.
 
 ![WhatsMac Screenshot](http://i.imgur.com/riXrTvx.jpg "WhatsMac Screenshot")
 
-> Disclaimer: This is NOT an official WhatsApp Product, it is only a hobby project created by myself
+> Disclaimer: This is NOT an official WhatsApp Product, it is only a hobby project created by the contributors
 
 Allows you to receive notification center notifications for new messages, and adds some useful keyboard shortcuts:
 
