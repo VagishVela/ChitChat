@@ -52,6 +52,16 @@ Most features of WhatsApp Web are currently supported, and support for the remai
 
 \*Media uploading **is** supported when dragging the image/video file into the app's window. Uploading using the upload button is currently not supported, since WKWebView provides no easy mechanism for using `<input type="file">` tags.
 
+##Contributing
+
+To develop for ChitChat:
+* [Fork](https://github.com/Neo11/ChitChat#fork-destination-box) the respository
+* Clone the repository with ```git clone git@github.com:<USERNAME>/ChitChat.git```, replace <USERNAME> with your username
+* Download and install xcode if you don't have it already
+* You will need to change the development team (```DevelopmentTeam =```) by logging in (xcode will prompt you when you try to debug), so don't include the project settings in your commit
+* Use the issue number in the commmit message if there is one, e.g. ```git commit -am "#27 Fix drawer not opening"```
+* Generate a pull request on GitHub and someone will look at it
+
 ##License
 
 
