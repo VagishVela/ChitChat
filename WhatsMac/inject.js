@@ -24,7 +24,7 @@ div.drawer-title { left:60px; bottom:17px; } \
 div.chat.media-chat > div.chat-avatar { opacity: 0;} \
 div.app.three, div.app.two { top: 0px; width: 100%; height: 100%; } \
 @media screen and (max-width:1024px) { \
-    .pane-list, .drawer-container-left { width: 38%; } \
+    .pane-list, .drawer-container-left { width: 100%; } \
     .drawer-container-mid, .drawer-container-right, .pane-chat, .pane-intro, .pane-info, .drawer-container-panel { width: 62%; } \
 } \
 @media screen and (min-width:1024px) and (max-width:1199px) { \
