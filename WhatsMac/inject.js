@@ -23,22 +23,23 @@ div.app-wrapper::before { opacity: 0; } \
 div.drawer-title { left:60px; bottom:17px; } \
 div.chat.media-chat > div.chat-avatar { opacity: 0;} \
 div.app.three, div.app.two { top: 0px; width: 100%; height: 100%; } \
+.drawer-container-left { width: 100%; } \
 @media screen and (max-width:1024px) { \
-    .pane-list, .drawer-container-left { width: 38%; } \
+    .pane-list { width: 100%; } \
     .drawer-container-mid, .drawer-container-right, .pane-chat, .pane-intro, .pane-info, .drawer-container-panel { width: 62%; } \
 } \
 @media screen and (min-width:1024px) and (max-width:1199px) { \
-    .pane-list, .drawer-container-left, .pane-info, .drawer-container-panel { width: 30%; } \
+    .pane-list, .pane-info, .drawer-container-panel { width: 30%; } \
     .drawer-container-mid, .drawer-container-right, .pane-chat, .pane-intro { width: 70%; } \
     .three .drawer-container-mid, .three .drawer-container-right, .three .pane-chat, .three .pane-intro { width: 40%; } \
 } \
 @media screen and (min-width:1200px) { \
-    .pane-list, .drawer-container-left, .pane-info, .drawer-container-panel { width: 359px; } \
+    .pane-list, .pane-info, .drawer-container-panel { width: 359px; } \
     .drawer-container-mid, .drawer-container-right, .pane-chat, .pane-intro { width: calc(100% - 359px); } \
     .three .drawer-container-mid, .three .drawer-container-right, .three .pane-chat, .three .pane-intro { width: calc(100% - 718px); } \
 }\
 @media screen and (min-width:1320px) {\
-    .pane-list, .drawer-container-left, .pane-info, .drawer-container-panel { width: 388px; } \
+    .pane-list, .pane-info, .drawer-container-panel { width: 388px; } \
     .drawer-container-mid, .drawer-container-right, .pane-chat, .pane-intro { width: calc(100% - 388px); } \
     .three .drawer-container-mid, .three .drawer-container-right, .three .pane-chat, .three .pane-intro { width: calc(100% - 718px); } \
 }\
