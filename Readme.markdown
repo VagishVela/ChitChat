@@ -1,5 +1,5 @@
 #ChitChat (formerly WhatsMac)
-> This is a modified Version of ChitChat from [stonesam92](https://github.com/stonesam92/ChitChat) and was created, because he is no longer active.
+> This is a modified Version of ChitChat from [stonesam92](https://github.com/stonesam92/ChitChat) and was created, because he is no longer active. This project is currently on hiatus, but may be rebooted if there is enough interest so please comment on [#43](https://github.com/Neo11/ChitChat/issues/43).
 
 A Mac app wrapper around WhatsApp's web client, [WhatsApp Web](https://web.whatsapp.com).
 
