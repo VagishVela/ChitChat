@@ -35,6 +35,7 @@ Text2Emoji converts the following text into Smileys. Thanks to [Paul](https://gi
 |;), ;-)      |😉     |
 |%), %-)      |😂     |
 |:/, :-/      |😕     |
+|:*, :-*      |😘     |
 |<3           |❤️     |
 
 ##Feature Support

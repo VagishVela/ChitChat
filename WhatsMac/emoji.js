@@ -1,12 +1,13 @@
 var emojis = [
-	{ code: [":)",":-)"], alt: "😊", cName: "emojiordered1369"},
-	{ code: [":D",":-D"], alt: "😀", cName: "emojiordered1359"},
-	{ code: ["8)","8-)"], alt: "😎", cName: "emojiordered1373"},
-	{ code: [":p",":P",":-p",":-P"], alt: "😛", cName: "emojiordered1386"},
-	{ code: [";)",";-)"], alt: "😉", cName: "emojiordered1368"},
-	{ code: ["%)","%-)"], alt: "😂", cName: "emojiordered1361"},
-    { code: [":/",":-/"], alt: "😕", cName: "emojiordered1380"},
-    { code: ["<3"], alt: "❤️", cName: "emojiordered0186"}
+	{ code: [":)",":-)"], alt: "😊", cName: "emojiordered1466"},
+	{ code: [":D",":-D"], alt: "😀", cName: "emojiordered1456"},
+	{ code: ["8)","8-)"], alt: "😎", cName: "emojiordered1470"},
+	{ code: [":p",":P",":-p",":-P"], alt: "😛", cName: "emojiordered1483"},
+	{ code: [";)",";-)"], alt: "😉", cName: "emojiordered1465"},
+	{ code: ["%)","%-)"], alt: "😂", cName: "emojiordered1458"},
+    { code: [":/",":-/"], alt: "😕", cName: "emojiordered1477"},
+    { code: [":*",":-*"], alt: "😘", cName: "emojiordered1480"},
+    { code: ["<3"], alt: "❤️", cName: "emojiordered0192"}
 ];
 
 function emoji(element) {
