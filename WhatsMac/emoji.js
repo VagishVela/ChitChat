@@ -10,6 +10,7 @@ var emojis = [
     { code: ["D:","D-:"], alt: "😩", cName: "emojiordered1497" },
     { code: [":d",":-d"], alt: "😋", cName: "emojiordered1467" },
     { code: [";p", ";-p"], alt: "😜", cName: "emojiordered1484" },
+    { code: ["%)", "%-)"], alt: "😂", cName: "emojiordered1458" },
     { code: [":p",":-p"], alt: "😛", cName: "emojiordered1483" },
     { code: [":o",":-o"], alt: "😮", cName: "emojiordered1502" },
     { code: [":s",":-s"], alt: "😖", cName: "emojiordered1478" },
