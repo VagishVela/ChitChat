@@ -17,7 +17,9 @@ this.Notification.requestPermission = function (callback) {
 };
 
 var styleAdditions = document.createElement('style');
-styleAdditions.textContent = '.icon-user-default { margin-left: auto; margin-right: 0; } ';
+styleAdditions.textContent = '.icon-user-default { margin-left: auto; margin-right: 0; } \
+div.app.three,div.app.two { top:0; width:100%; height:100%; } \
+.drawer-container-left { width:100%; }';
 
 document.documentElement.appendChild(styleAdditions);
 
