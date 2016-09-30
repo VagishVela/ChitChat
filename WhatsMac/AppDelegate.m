@@ -220,11 +220,11 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     NSString *title = change[NSKeyValueChangeNewKey];
-    if ([title isEqualToString:@"WhatsApp Web"]) {
+    if ([title isEqualToString:@"WhatsApp"]) {
         self.notificationCount = @"";
     } else {
         NSRegularExpression* regex =
-                [NSRegularExpression regularExpressionWithPattern:@"\\(([0-9]+)\\) WhatsApp Web"
+                [NSRegularExpression regularExpressionWithPattern:@"\\(([0-9]+)\\) WhatsApp"
                                                           options:0
                                                             error:nil];
         NSTextCheckingResult* match = [regex firstMatchInString:title
