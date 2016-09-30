@@ -7,7 +7,7 @@ The latest version is available [here](https://github.com/Neo11/ChitChat/release
 
 Requires OSX 10.10 Yosemite and a WhatsApp Web compatible device.
 
-![WhatsMac Screenshot](http://imgur.com/a/7bqzg "ChitChat Screenshot")
+![WhatsMac Screenshot](/ScreenShot.png "ChitChat Screenshot")
 
 > Disclaimer: This is NOT an official WhatsApp Product, it is only a hobby project created by the contributors
 
