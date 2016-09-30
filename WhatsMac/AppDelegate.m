@@ -252,6 +252,7 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
 
 - (void)setNotificationCount:(NSString *)notificationCount {
     if (![_notificationCount isEqualToString:notificationCount]) {
+        
         [[NSApp dockTile] setBadgeLabel:notificationCount];
 
         NSInteger badgeCount = notificationCount.integerValue;
