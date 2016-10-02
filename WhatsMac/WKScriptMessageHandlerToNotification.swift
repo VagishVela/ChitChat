@@ -27,7 +27,7 @@ class WKScriptMessageHandlerToNotification: NSObject, WKScriptMessageHandler {
         notification.subtitle = messageBody[1]
         let identifier = "\(messageBody[2]):\(counter)"
         notification.identifier = identifier;
-        counter++
+        counter += 1
 
         let base64URL = NSURL(string: messageBody[3])
         let imageData = NSData(contentsOfURL: base64URL!)
