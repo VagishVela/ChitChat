@@ -158,6 +158,7 @@
             <pubDate>Sun, 30 Mar 2016 18:41:00 +0000</pubDate>
             <enclosure url="https://github.com/Neo11/ChitChat/releases/download/v2.3/ChitChat.zip" sparkle:version="2.3" type="application/octet-stream" />
         </item>
+        <!--
         <item>
             <title>Version 2.5</title>
             <description><![CDATA[
@@ -171,5 +172,6 @@
             <pubDate>Sun, 02 Oct 2016 11:45:00 +0000</pubDate>
             <enclosure url="https://github.com/Neo11/ChitChat/releases/download/2.5/ChitChat.zip" sparkle:version="2.5" type="application/octet-stream" />
         </item>
+-->
     </channel>
 </rss>
