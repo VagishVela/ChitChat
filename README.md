@@ -84,7 +84,8 @@ To develop for ChitChat:
 ##License
 
 Copyright (c) 2015 Authors of the source code of this project.
-[MIT License](./LICENSE.md)
+
+See the [MIT License](./LICENSE.md).
 
 ##Note
 
