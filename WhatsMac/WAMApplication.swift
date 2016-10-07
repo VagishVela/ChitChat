@@ -19,7 +19,7 @@ class WAMApplication : NSApplication {
             super.sendEvent(theEvent)
             return
         }
-        if theEvent.type == .KeyDown && theEvent.modifierFlags.contains(.CommandKeyMask) {
+        if theEvent.type == .KeyDown && theEvent.modifierFlags.contains(NSControlKeyMask) {
             switch theEvent.characters! {
                 case "1", "2", "3", "4", "5", "6", "7", "8", "9":
                     appDelegate.setActiveConversationAtIndex(theEvent.characters)

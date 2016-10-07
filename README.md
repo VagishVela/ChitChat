@@ -1,5 +1,5 @@
 #ChitChat (formerly WhatsMac)
-> This is a modified Version of ChitChat from [stonesam92](https://github.com/stonesam92/ChitChat) and was created, because he is no longer active. This project is currently on hiatus, but may be rebooted if there is enough interest so please comment on [#43](https://github.com/Neo11/ChitChat/issues/43).
+> This is a modified Version of ChitChat from [stonesam92/ChitChat](https://github.com/stonesam92/ChitChat) and was created, because he is no longer active.
 
 A Mac app wrapper around WhatsApp's web client, [WhatsApp Web](https://web.whatsapp.com).
 
@@ -7,7 +7,7 @@ The latest version is available [here](https://github.com/Neo11/ChitChat/release
 
 Requires OSX 10.10 Yosemite and a WhatsApp Web compatible device.
 
-![WhatsMac Screenshot](http://i.imgur.com/riXrTvx.jpg "WhatsMac Screenshot")
+![WhatsMac Screenshot](/ScreenShot.png "ChitChat Screenshot")
 
 > Disclaimer: This is NOT an official WhatsApp Product, it is only a hobby project created by the contributors
 
@@ -66,10 +66,10 @@ Most features of WhatsApp Web are currently supported, and support for the remai
 | Attached media viewing                  | YES       |
 | Attached media downloading              | YES       |
 | Notification center notifications       | YES       |
-| Media uploading                         | NO\*      |
+| Media uploading                         | NO\* [#10](https://github.com/Neo11/ChitChat/issues/10)     |
 | Media recording (using camera + mic.)   | NO        |
 
-\*Media uploading **is** supported when dragging the image/video file into the app's window. Uploading using the upload button is currently not supported, since WKWebView provides no easy mechanism for using `<input type="file">` tags.
+\*Media uploading **is** supported when dragging the image/video file into the app's window. Uploading using the upload button is currently not supported, since WKWebView did not support an easy mechanism for using `<input type="file">` tags. Since [Wekbit bug 133759](https://bugs.webkit.org/show_bug.cgi?id=137759) was fixed, we can now look at this issue in [#10](https://github.com/Neo11/ChitChat/issues/11).
 
 ##Contributing
 
@@ -83,14 +83,9 @@ To develop for ChitChat:
 
 ##License
 
+Copyright (c) 2015 Authors of the source code of this project.
 
-Copyright (c) 2015 Authors of the source code of this project
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+See the [MIT License](./LICENSE.md).
 
 ##Note
 
