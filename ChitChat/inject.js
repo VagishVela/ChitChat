@@ -67,7 +67,11 @@ function updateEmoji() {
 }
 
 function newConversation() {
-    document.querySelector('button.icon-chat').click();
+    event = new MouseEvent('mousedown', {
+                           'bubbles': true,
+                           'cancelable': true,
+                           'view': window});
+    document.querySelector('button.icon.icon-chat').dispatchEvent(event);
     document.querySelector('input.input-search').focus();
 
     var header = document.querySelector('div.drawer-title');
