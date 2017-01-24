@@ -69,7 +69,7 @@ Most features of WhatsApp Web are currently supported, and support for the remai
 | Media uploading                         | NO\* [#10](https://github.com/Neo11/ChitChat/issues/10)     |
 | Media recording (using camera + mic.)   | NO        |
 
-\*Media uploading **is** supported when dragging the image/video file into the app's window. Uploading using the upload button is currently not supported, since WKWebView did not support an easy mechanism for using `<input type="file">` tags. Since [Wekbit bug 133759](https://bugs.webkit.org/show_bug.cgi?id=137759) was fixed, we can now look at this issue in [#10](https://github.com/Neo11/ChitChat/issues/11).
+\*Media uploading **is** supported when dragging the image/video file into the app's window. Uploading using the upload button is currently not supported, since WKWebView did not support an easy mechanism for using `<input type="file">` tags. Since [Wekbit bug 133759](https://bugs.webkit.org/show_bug.cgi?id=137759) was fixed, we can now look at this issue in [#10](https://github.com/Neo11/ChitChat/issues/10).
 
 ##Contributing
 
