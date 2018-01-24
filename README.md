@@ -1,4 +1,4 @@
-#ChitChat (formerly WhatsMac)
+# ChitChat (formerly WhatsMac)
 > This is a modified Version of ChitChat from [stonesam92/ChitChat](https://github.com/stonesam92/ChitChat) and was created, because he is no longer active.
 
 A Mac app wrapper around WhatsApp's web client, [WhatsApp Web](https://web.whatsapp.com).
@@ -22,7 +22,7 @@ Allows you to receive notification center notifications for new messages, and ad
 
 Inspired by, and in small part based on, [Messenger for Mac](http://fbmacmessenger.rsms.me/), created by [Rasmus Andersson](https://twitter.com/rsms). ChitChat uses some code from this project.
 
-##Smileys
+## Smileys
 
 Text2Emoji converts the following text into Smileys. Thanks to [Paul](https://github.com/c-o-m-m-a-n-d-e-r)
 
@@ -56,7 +56,7 @@ Text2Emoji converts the following text into Smileys. Thanks to [Paul](https://gi
 |(n) (N)      |👎     |
 |<3           |❤️     |
 
-##Feature Support
+## Feature Support
 
 Most features of WhatsApp Web are currently supported, and support for the remainder is being actively developed:
 
@@ -71,7 +71,7 @@ Most features of WhatsApp Web are currently supported, and support for the remai
 
 \*Media uploading **is** supported when dragging the image/video file into the app's window. Uploading using the upload button is currently not supported, since WKWebView did not support an easy mechanism for using `<input type="file">` tags. Since [Wekbit bug 133759](https://bugs.webkit.org/show_bug.cgi?id=137759) was fixed, we can now look at this issue in [#10](https://github.com/Neo11/ChitChat/issues/10).
 
-##Contributing
+## Contributing
 
 To develop for ChitChat:
 * Fork the repository
@@ -81,13 +81,13 @@ To develop for ChitChat:
 * Use the issue number in the commmit message if there is one, e.g. ```git commit -am "#27 Fix drawer not opening"```
 * Generate a pull request on GitHub and someone will look at it
 
-##License
+## License
 
 Copyright (c) 2015 Authors of the source code of this project.
 
 See the [MIT License](./LICENSE.md).
 
-##Note
+## Note
 
 This project does **not** attempt to reverse engineer the WhatsApp API or attempt to reimplement any part of the WhatsApp client's communications with the WhatsApp servers.
 
