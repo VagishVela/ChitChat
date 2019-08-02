@@ -6,20 +6,20 @@ import Foundation
 import AppKit
 
 class WAMApplication : NSApplication {
-    override func sendEvent(theEvent: NSEvent) {
+    override func sendEvent(_ theEvent: NSEvent) {
         let appDelegate = self.delegate as! AppDelegate
         
-        if theEvent.type == .LeftMouseUp {
-            appDelegate.shouldPropagateMouseUpEvent(theEvent)
+        if theEvent.type == .leftMouseUp {
+            appDelegate.shouldPropagateMouseUp(theEvent)
             super.sendEvent(theEvent)
             return
         }
-        if theEvent.type == .LeftMouseDragged {
+        if theEvent.type == .leftMouseDragged {
             appDelegate.shouldPropagateMouseDraggedEvent(theEvent)
             super.sendEvent(theEvent)
             return
         }
-        if theEvent.type == .KeyDown && theEvent.modifierFlags.contains(NSControlKeyMask) {
+        if theEvent.type == .keyDown && theEvent.modifierFlags.contains(NSControlKeyMask) {
             switch theEvent.characters! {
                 case "1", "2", "3", "4", "5", "6", "7", "8", "9":
                     appDelegate.setActiveConversationAtIndex(theEvent.characters)

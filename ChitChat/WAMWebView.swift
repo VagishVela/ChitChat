@@ -7,8 +7,8 @@ import Foundation
 import WebKit
 
 class WAMWebView : WKWebView {
-    override func performKeyEquivalent(theEvent:NSEvent) -> Bool {
-        let result: Bool = super.performKeyEquivalent(theEvent)
+    override func performKeyEquivalent(with theEvent:NSEvent) -> Bool {
+        let result: Bool = super.performKeyEquivalent(with: theEvent)
         switch theEvent.keyCode {
         case 53, 123, 124:
             return true;
