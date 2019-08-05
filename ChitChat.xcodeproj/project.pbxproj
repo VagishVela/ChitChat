@@ -329,7 +329,6 @@
 				DEVELOPMENT_TEAM = 4XFEQ6CG38;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/sparkle,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ChitChat/Info.plist;
@@ -353,7 +352,6 @@
 				DEVELOPMENT_TEAM = 4XFEQ6CG38;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/sparkle,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ChitChat/Info.plist;
