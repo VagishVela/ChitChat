@@ -317,6 +317,8 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
         downloadMediaAlert.informativeText = @"To download media, please just drag and drop it from this window into Finder.";
         [downloadMediaAlert addButtonWithTitle:@"OK"];
         [downloadMediaAlert runModal];
+    } else if ([url.absoluteString isEqualToString:@"about:blank"]) {
+        decisionHandler(WKNavigationActionPolicyAllow);
     } else {
         decisionHandler(WKNavigationActionPolicyCancel);
         [[NSWorkspace sharedWorkspace] openURL:url];
