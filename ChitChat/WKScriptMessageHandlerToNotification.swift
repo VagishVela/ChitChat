@@ -15,8 +15,8 @@ class WKScriptMessageHandlerToNotification: NSObject, WKScriptMessageHandler {
     }
 
     @available(OSX 10.10, *)
-    func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
-        if self.window.mainWindow {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if self.window.isMainWindow {
             return
         }
         let messageBody = message.body as! [String]
@@ -29,11 +29,11 @@ class WKScriptMessageHandlerToNotification: NSObject, WKScriptMessageHandler {
         notification.identifier = identifier;
         counter += 1
 
-        let base64URL = NSURL(string: messageBody[3])
-        let imageData = NSData(contentsOfURL: base64URL!)
+        let base64URL = URL(string: messageBody[3])
+        let imageData = try? Data(contentsOf: base64URL!)
         let avatar = NSImage(data: imageData!)
 
         notification.setValue(avatar, forKey: "_identityImage")
-        NSUserNotificationCenter.defaultUserNotificationCenter().scheduleNotification(notification)
+        NSUserNotificationCenter.default.scheduleNotification(notification)
     }
 }

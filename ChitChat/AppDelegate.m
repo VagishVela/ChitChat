@@ -108,7 +108,7 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
     [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
 
     //Whatsapp web only works with specific user agents
-    _webView._customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12";
+    _webView._customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.2 Safari/605.1.15";
 
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://web.whatsapp.com"]];
     [_webView loadRequest:urlRequest];
@@ -317,6 +317,8 @@ NSString* const WAMShouldHideStatusItem = @"WAMShouldHideStatusItem";
         downloadMediaAlert.informativeText = @"To download media, please just drag and drop it from this window into Finder.";
         [downloadMediaAlert addButtonWithTitle:@"OK"];
         [downloadMediaAlert runModal];
+    } else if ([url.absoluteString isEqualToString:@"about:blank"]) {
+        decisionHandler(WKNavigationActionPolicyAllow);
     } else {
         decisionHandler(WKNavigationActionPolicyCancel);
         [[NSWorkspace sharedWorkspace] openURL:url];
